@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body, html {
+    height: 100%;
+    display: grid;
+    place-items: center;
+    background: #000000;
+}
+
+button {
+    position: relative;
+    width: 250px;
+    height: 80px;
+    border-radius: 18px;
+    background: #111111;
+    color: #ffffff;
+    font-size: 24px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #ff0077, #2d76ff, #3cd421, #e7d219, #ff0077);
+    background-size: 400%;
+    z-index: 1;
+    animation: glow 8s linear infinite;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    background: inherit;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    border-radius: 18px;
+    filter: blur(20px);
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+button:hover::before {
+    opacity: 1;
+    z-index: -1;
+}
+
+@keyframes glow {
+
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 400%;
+    }
+
+}
